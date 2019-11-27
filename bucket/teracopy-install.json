@@ -21,11 +21,5 @@
     },
     "autoupdate": {
         "url": "http://www.codesector.com/files/teracopy.exe"
-    },
-    "shortcuts": [
-        [
-            "teracopy.exe",
-            "TeraCopy"
-        ]
-    ]
+    }
 }
