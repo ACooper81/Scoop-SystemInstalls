@@ -10,10 +10,14 @@
             "/verysilent",
             "/nocancel",
             "/norestart"
-        ]
+        ],
+        "script": "Move-Item \"%ProgramData%\\Microsoft\\Windows\\Start Menu\\TeraCopy.lnk\" -Destination \"%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\""
     },
     "uninstaller": {
-        "script": "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart"
+        "script": [
+            "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart",
+            "Remove-Item \"%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\\TeraCopy.lnk\""
+        ]
     },
     "checkver": {
         "url": "https://www.codesector.com/downloads",
