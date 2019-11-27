@@ -10,13 +10,11 @@
             "/verysilent",
             "/nocancel",
             "/norestart"
-        ],
-        "script": "Move-Item \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\TeraCopy.lnk\" -Destination \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\""
+        ]
     },
     "uninstaller": {
         "script": [
-            "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart",
-            "Remove-Item \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\TeraCopy.lnk\""
+            "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart"
         ]
     },
     "checkver": {
