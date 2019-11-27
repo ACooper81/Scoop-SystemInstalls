@@ -24,7 +24,7 @@
     },
     "shortcuts": [
         [
-            "$Env:Programfiles\\TeraCopy\\teracopy.exe",
+            "teracopy.exe",
             "TeraCopy"
         ]
     ]
