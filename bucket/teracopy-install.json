@@ -8,8 +8,7 @@
         "script": [
             "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/verysilent', '/nocancel', '/norestart') -RunAs | Out-Null",
             "Remove-Item \"$dir\\setup.exe\"",
-            "Move-Item -Path \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\TeraCopy.lnk\" -Destination \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\TeraCopy.lnk\" -Force",
-            "Remove-Item \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\TeraCopy.lnk\" -Force"
+            "Move-Item -Path \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\TeraCopy.lnk\" -Destination \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\TeraCopy.lnk\" -Force"
         ]
     },
     "uninstaller": {
