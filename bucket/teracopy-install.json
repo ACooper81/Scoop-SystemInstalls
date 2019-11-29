@@ -2,19 +2,20 @@
     "homepage": "https://www.codesector.com",
     "description": "A popular utility designed to copy files faster and more reliably, providing the user with many features.",
     "version": "3.26",
-    "url": "http://www.codesector.com/files/teracopy.exe",
+    "url": "http://www.codesector.com/files/teracopy.exe#/setup.exe",
     "hash": "5b667ff25a5f2ecf810e2f60dd079dc68fce6eafa174e6de835b8aed919e12f3",
     "installer": {
-        "file": "teracopy.exe",
-        "args": [
-            "/verysilent",
-            "/nocancel",
-            "/norestart"
+        "script": [
+            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/verysilent', '/nocancel', '/norestart') -RunAs | Out-Null",
+            "Remove-Item \"$dir\\setup.exe\"",
+            "Move-Item -Path \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\TeraCopy.lnk\" -Destination \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\TeraCopy.lnk\" -Force",
+            "Remove-Item \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\TeraCopy.lnk\" -Force"
         ]
     },
     "uninstaller": {
         "script": [
-            "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart"
+            "& \"$Env:Programfiles\\TeraCopy\\unins000.exe\" /verysilent /nocancel /norestart",
+            "Remove-Item \"C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\TeraCopy.lnk\" -Force"
         ]
     },
     "checkver": {
