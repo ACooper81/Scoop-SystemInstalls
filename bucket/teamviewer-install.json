@@ -11,7 +11,8 @@
     "installer": {
         "script": [
             "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null",
-            "Remove-Item \"$dir\\setup.exe\""
+            "Remove-Item \"$dir\\setup.exe\"",
+            "Remove-Item \"C:\\Users\\Desktop\\TeamViewer.lnk\" --Force"
         ]
     },
     "uninstaller": {
