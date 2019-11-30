@@ -12,7 +12,7 @@
     "installer": {
         "script": [
             "New-Item \"$dir\\Input.txt\"",
-            "Set-Conent \"$dir\\Input.txt\" 'y'",
+            "Set-Content \"$dir\\Input.txt\" 'y'",
             "Invoke-ExternalCommand \"$env:HOMEDRIVE\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" -RedirectStandardInput \"$dir\\Input.txt\" -ArgumentList \"extpack install --replace '\"$dir\\Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack'\"\" -RunAs | Out-Null"
         ]
     },
