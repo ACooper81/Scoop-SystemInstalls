@@ -11,7 +11,7 @@
     },
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$env:HOMEDRIVE\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" -ArgumentList @('extpack', 'install', '--replace', '\"$dir\\Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack\"', '2>&1') -RunAs"
+            "Invoke-ExternalCommand \"$env:HOMEDRIVE\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" -ArgumentList @('extpack', 'install', '--replace', '\"$dir\\Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack\"') -RunAs | Out-Null"
         ]
     },
     "uninstaller": {
