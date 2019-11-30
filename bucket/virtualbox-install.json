@@ -12,8 +12,7 @@
     "installer": {
         "script": [
             "Start-Process -Wait -WindowStyle Hidden cmd \"/c call `\"$dir\\VBoxSetup.exe`\" --msiparams VBOX_START=0 VBOX_INSTALLDESKTOPSHORTCUT=0 VBOX_INSTALLQUICKLAUNCHSHORTCUT=0 REBOOT=ReallySuppress --silent\" -Verb RunAs",
-            "Remove-Item \"$dir\\VBoxSetup.exe\"",
-            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Oracle VM VirtualBox.lnk\""
+            "Remove-Item \"$dir\\VBoxSetup.exe\""
         ]
     },
     "uninstaller": {
