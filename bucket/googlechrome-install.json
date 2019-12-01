@@ -8,7 +8,7 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi_",
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi",
             "installer": {
                 "script": "Start-Process -Wait msiexec \"/i `\"$dir\\GoogleChromeStandaloneEnterprise64.msi_`\" /q\" -Verb RunAs"
             },
@@ -17,7 +17,7 @@
             }
         },
         "32bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi_",
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi",
             "installer": {
                 "script": "Start-Process -Wait msiexec \"/i `\"$dir\\GoogleChromeStandaloneEnterprise.msi_`\" /q\" -Verb RunAs"
             },
@@ -33,11 +33,11 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi_"
+                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi"
                 }
             },
             "32bit": {
-                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi_"
+                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi"
                 }
             }
         }
