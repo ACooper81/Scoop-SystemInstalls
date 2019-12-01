@@ -8,17 +8,23 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi_#/setup.msi_"
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi_",
+            "installer": {
+                "script": "Start-Process -Wait msiexec \"/i `\"$dir\\GoogleChromeStandaloneEnterprise64.msi_`\" /q\" -Verb RunAs"
+            },
+            "uninstaller": {
+                "script": "Start-Process -Wait msiexec \"/x `\"$dir\\GoogleChromeStandaloneEnterprise64.msi_`\" /q\" -Verb RunAs"
+            }
         },
         "32bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi_#/setup.msi_"
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi_",
+            "installer": {
+                "script": "Start-Process -Wait msiexec \"/i `\"$dir\\GoogleChromeStandaloneEnterprise.msi_`\" /q\" -Verb RunAs"
+            },
+            "uninstaller": {
+                "script": "Start-Process -Wait msiexec \"/x `\"$dir\\GoogleChromeStandaloneEnterprise.msi_`\" /q\" -Verb RunAs"
+            }
         }
-    },
-    "installer": {
-        "script": "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi_`\" /q\" -Verb RunAs"
-    },
-    "uninstaller": {
-        "script": "Start-Process -Wait msiexec \"/x `\"$dir\\setup.msi_`\" /q\" -Verb RunAs"
     },
     "checkver": {
         "url": "https://chrome-dl.com/api/chrome.min.xml",
