@@ -27,11 +27,11 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi_"
+                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi_#/setup.msi_"
                 }
             },
             "32bit": {
-                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi_"
+                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi_#/setup.msi_"
                 }
             }
         }
