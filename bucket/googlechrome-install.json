@@ -8,23 +8,23 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi",
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi",
             "hash": "695911D4A05EA28F9EF74D3690290F9D96133EBCB628FD60BF0CBCDD5094DAFD",
             "installer": {
-                "script": "Start-Process -Wait msiexec \"/i `\"$dir\\GoogleChromeStandaloneEnterprise64.msi_`\" /q\" -Verb RunAs"
+                "script": "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi`\" /q\" -Verb RunAs"
             },
             "uninstaller": {
-                "script": "Start-Process -Wait msiexec \"/x `\"$dir\\GoogleChromeStandaloneEnterprise64.msi_`\" /q\" -Verb RunAs"
+                "script": "Start-Process -Wait msiexec \"/x `\"$dir\\setup.msi`\" /q\" -Verb RunAs"
             }
         },
         "32bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi",
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi#/setup.msi",
             "hash": "24229751985717B512079E2D4A77263B3B8B394631F8004184E40BEC449BCC65",
             "installer": {
-                "script": "Start-Process -Wait msiexec \"/i `\"$dir\\GoogleChromeStandaloneEnterprise.msi_`\" /q\" -Verb RunAs"
+                "script": "Start-Process -Wait msiexec \"/i `\"$dir\\setup.msi`\" /q\" -Verb RunAs"
             },
             "uninstaller": {
-                "script": "Start-Process -Wait msiexec \"/x `\"$dir\\GoogleChromeStandaloneEnterprise.msi_`\" /q\" -Verb RunAs"
+                "script": "Start-Process -Wait msiexec \"/x `\"$dir\\setup.msi`\" /q\" -Verb RunAs"
             }
         }
     },
@@ -35,11 +35,11 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi"
+                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi"
                 }
             },
             "32bit": {
-                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi"
+                "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi#/setup.msi"
                 }
             }
         }
