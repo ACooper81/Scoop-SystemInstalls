@@ -8,12 +8,10 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi_",
-            "hash": "695911D4A05EA28F9EF74D3690290F9D96133EBCB628FD60BF0CBCDD5094DAFD"
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi_"
         },
         "32bit": {
-            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi#/setup.msi_",
-            "hash": "24229751985717B512079E2D4A77263B3B8B394631F8004184E40BEC449BCC65"
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi#/setup.msi_"
         }
     },
     "installer": {
