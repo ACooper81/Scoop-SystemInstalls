@@ -2,5 +2,12 @@
     "version":  "78.0.3904.108",
     "homepage":  "https://www.google.com/chrome/",
     "license":  "Freeware",
-    "url":  "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi_"
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi_"
+        },
+        "32bit": {
+            "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi#/setup.msi_"
+        }
+    }
 }
