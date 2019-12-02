@@ -1,5 +1,6 @@
 ﻿{
     "version":  "78.0.3904.108",
+    "description": "Fast, secure, and free web browser, built for the modern web.",
     "homepage":  "https://www.google.com/chrome/",
     "license":  "Freeware",
     "architecture": {
