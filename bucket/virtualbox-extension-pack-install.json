@@ -12,7 +12,7 @@
     "installer": {
         "script": [
             "$command = @'",
-            "y | \"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" extpack install --replace \"$dir\\Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack\"",
+            "\"y\" | \"C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe\" extpack install --replace \"$dir\\Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack\"",
             "'@",
             "",
             "Invoke-Expression -Command:$command"
