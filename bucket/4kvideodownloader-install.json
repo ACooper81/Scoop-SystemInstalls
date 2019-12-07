@@ -24,5 +24,20 @@
     },
     "uninstaller": {
         "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
+    },
+    "checkver": {
+        "url": "https://www.4kdownload.com/products/product-videodownloader",
+        "re": "'Download', 'videodownloader_([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.4kdownload.com/app/4kvideodownloader_$majorVersion.$minorVersion.$patchVersion_x64.msi#/setup.msi_"
+            },
+            "32bit": {
+                "url": "https://dl.4kdownload.com/app/4kvideodownloader_$majorVersion.$minorVersion.$patchVersion.msi#/setup.msi_"
+            }
+        }
     }
+    
 }
