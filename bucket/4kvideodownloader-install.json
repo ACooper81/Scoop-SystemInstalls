@@ -15,5 +15,14 @@
             "url": "https://dl.4kdownload.com/app/4kvideodownloader_4.10.1.msi",
             "hash": "b78c2d91bed7b844d16c44f91f8b94ab331fa2cd1b48f0fb0b669bcc47dfb4c6"
         }
+    },
+    "installer": {
+        "script": [
+            "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null",
+            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\4K Video Downloader.lnk\" -Force"
+        ]
+    },
+    "uninstaller": {
+        "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
     }
 }
