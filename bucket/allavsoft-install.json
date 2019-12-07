@@ -15,7 +15,7 @@
     },
     "uninstaller": {
         "script": [
-            "& \"$Env:Programfiles\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+            "& \"$Env:Programfiles (x86)\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
         ]
     },
     "checkver": {
