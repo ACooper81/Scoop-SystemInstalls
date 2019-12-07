@@ -19,7 +19,7 @@
     "installer": {
         "script": [
             "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null",
-            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\4K Video Downloader.lnk\" -Force"
+            "Remove-Item \"$env:USERPROFILE\\Desktop\\4K Video Downloader.lnk\" -Force"
         ]
     },
     "uninstaller": {
