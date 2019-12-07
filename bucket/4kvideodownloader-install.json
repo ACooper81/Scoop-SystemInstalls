@@ -8,11 +8,11 @@
     "notes": "",
     "architecture": {
         "64bit": {
-            "url": "https://dl.4kdownload.com/app/4kvideodownloader_4.10.1_x64.msi",
+            "url": "https://dl.4kdownload.com/app/4kvideodownloader_4.10.1_x64.msi#/setup.msi_",
             "hash": "c4a5070ad8baa55f005efeb339fd285c778be9f27d04bbf6dded87dc88c015e2"
         },
         "32bit": {
-            "url": "https://dl.4kdownload.com/app/4kvideodownloader_4.10.1.msi",
+            "url": "https://dl.4kdownload.com/app/4kvideodownloader_4.10.1.msi#/setup.msi_",
             "hash": "b78c2d91bed7b844d16c44f91f8b94ab331fa2cd1b48f0fb0b669bcc47dfb4c6"
         }
     },
