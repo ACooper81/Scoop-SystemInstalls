@@ -8,8 +8,9 @@
     "hash": "660D601BCD663F96F32CF3983FB72400E400CB707514F17EA6D0C039446FC2ED",
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/NODESKTOPICON', '/CLOSEAPPLICATIONS', '/SP-') -RunAs | Out-Null",
-            "Remove-Item \"$dir\\setup.exe\""
+            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CLOSEAPPLICATIONS', '/SP-') -RunAs | Out-Null",
+            "Remove-Item \"$dir\\setup.exe\"",
+            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force"
         ]
     },
     "uninstaller": {
