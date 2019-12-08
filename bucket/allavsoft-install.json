@@ -6,17 +6,31 @@
     "notes": "",
     "url": "https://www.allavsoft.com/downloads/allavsoft.exe#/setup.exe",
     "hash": "660D601BCD663F96F32CF3983FB72400E400CB707514F17EA6D0C039446FC2ED",
-    "installer": {
-        "script": [
-            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CLOSEAPPLICATIONS', '/SP-') -RunAs | Out-Null",
-            "Remove-Item \"$dir\\setup.exe\"",
-            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force"
-        ]
-    },
-    "uninstaller": {
-        "script": [
-            "& \"$Env:Programfiles (x86)\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
-        ]
+    "architecture": {
+        "64bit": {
+            "installer": {
+                "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CLOSEAPPLICATIONS', '/SP-') -RunAs | Out-Null"
+            },
+            "uninstaller": {
+                "script": "& \"$Env:Programfiles (x86)\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+            },
+            "post_install": [
+                "Remove-Item \"$dir\\setup.exe\"",
+                "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force"
+            ]
+        },
+        "32bit": {
+            "installer": {
+                "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CLOSEAPPLICATIONS', '/SP-') -RunAs | Out-Null"
+            },
+            "uninstaller": {
+                "script": "& \"$Env:Programfiles\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+            },
+            "post_install": [
+                "Remove-Item \"$dir\\setup.exe\"",
+                "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force"
+            ]
+        }
     },
     "checkver": {
         "url": "https://www.kcsoftwares.com/sumo/view.php?uid=333942906&ProductName=video%20downloader%20converter&Company=Allavsoft%20Corporation&prot=2",
