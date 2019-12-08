@@ -12,7 +12,11 @@
             },
             "uninstaller": {
                 "script": "& \"$Env:UserProfile\\AppData\\Local\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
-            }
+            },
+            "post_install": [
+                "Remove-Item \"$dir\\setup.exe\"",
+                "Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force"
+            ]
         },
         "32bit": {
             "installer": {
@@ -20,7 +24,11 @@
             },
             "uninstaller": {
                 "script": "& \"$Env:UserProfile\\AppData\\Local\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
-            }
+            },
+            "post_install": [
+                "Remove-Item \"$dir\\setup.exe\"",
+                "Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force"
+            ]
         }
     },
     "checkver": {
