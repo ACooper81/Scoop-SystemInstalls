@@ -11,7 +11,7 @@
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S') -RunAs | Out-Null"
             },
             "uninstaller": {
-                "script": "& \"$Env:UserProfile\\AppData\\Local\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
+                "script": "& \"$Env:UserProfile\\AppData\\Local\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
             }
         },
         "32bit": {
@@ -19,7 +19,7 @@
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S') -RunAs | Out-Null"
             },
             "uninstaller": {
-                "script": "& \"$Env:UserProfile\\AppData\\Local\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
+                "script": "& \"$Env:UserProfile\\AppData\\Local\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
             }
         }
     },
