@@ -9,17 +9,11 @@
         "64bit": {
             "installer": {
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S') -RunAs | Out-Null"
-            },
-            "uninstaller": {
-                "script": ""
             }
         },
         "32bit": {
             "installer": {
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S') -RunAs | Out-Null"
-            },
-            "uninstaller": {
-                "script": ""
             }
         }
     },
