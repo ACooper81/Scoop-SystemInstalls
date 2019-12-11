@@ -18,10 +18,12 @@
     },
     "installer": {
         "script": [
-            "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null",
-            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Google Chrome.lnk\" -Force"
+            "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
         ]
     },
+    "post_install": [
+        "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Google Chrome.lnk\" -Force"
+    ],
     "uninstaller": {
         "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
     },
