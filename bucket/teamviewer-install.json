@@ -15,16 +15,16 @@
             "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\TeamViewer.lnk\" -Force"
         ]
     },
+    "post_install": [
+        "$pg_x86 = (Get-Item Env:programfiles`(x86`)).Value",
+        "Invoke-ExternalCommand \"$pg_x86\\TeamViewer\\uninstall.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null"
+    ],
     "uninstaller": {
         "script": [
             "taskkill /F /IM teamviewer.exe /FI 'status eq running'"
             
         ]
     },
-    "post_install": [
-        "$pg_x86 = (Get-Item Env:programfiles`(x86`)).Value",
-        "Invoke-ExternalCommand \"$pg_x86\\TeamViewer\\uninstall.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null"
-    ],
     "checkver": {
         "url": "https://www.teamviewer.com/en/download/windows/",
         "re": ">\\s*([\\d.]+)\\s*<"
