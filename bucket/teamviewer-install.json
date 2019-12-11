@@ -10,19 +10,18 @@
     "hash": "e08d5efa1f17b02ba20f9b4987ed744f7635d2103ade64101551767cf319baf4",
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null",
-            "Remove-Item \"$dir\\setup.exe\"",
-            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\TeamViewer.lnk\" -Force"
+            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null"
         ]
     },
     "post_install": [
-        "$pg_x86 = (Get-Item Env:programfiles`(x86`)).Value",
-        "Invoke-ExternalCommand \"$pg_x86\\TeamViewer\\uninstall.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null"
+        "Remove-Item \"$dir\\setup.exe\"",
+            "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\TeamViewer.lnk\" -Force"
     ],
     "uninstaller": {
         "script": [
-            "taskkill /F /IM teamviewer.exe /FI 'status eq running'"
-            
+            "taskkill /F /IM teamviewer.exe /FI 'status eq running'",
+            "$pg_x86 = (Get-Item Env:programfiles`(x86`)).Value",
+            "Invoke-ExternalCommand \"$pg_x86\\TeamViewer\\uninstall.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null"
         ]
     },
     "checkver": {
