@@ -1,5 +1,5 @@
 {
-    "version": "78.0.3904.108",
+    "version": "79.0.3945.79",
     "description": "Fast, secure, and free web browser, built for the modern web.",
     "homepage": "https://www.google.com/chrome/",
     "license": {
@@ -9,21 +9,17 @@
     "architecture": {
         "64bit": {
             "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi_",
-            "hash": "695911D4A05EA28F9EF74D3690290F9D96133EBCB628FD60BF0CBCDD5094DAFD"
+            "hash": "e0ad1a767bff30b354f11b60cb0b08b56a2719e8758f2e11f44c459687bf5e50"
         },
         "32bit": {
             "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi#/setup.msi_",
-            "hash": "24229751985717B512079E2D4A77263B3B8B394631F8004184E40BEC449BCC65"
+            "hash": "0f95f2acbfe179e542fe912b8822d3bbcb572fa362fde4331878ae08aa8bea53"
         }
     },
     "installer": {
-        "script": [
-            "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
-        ]
+        "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
     },
-    "post_install": [
-        "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Google Chrome.lnk\" -Force"
-    ],
+    "post_install": "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Google Chrome.lnk\" -Force",
     "uninstaller": {
         "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
     },
