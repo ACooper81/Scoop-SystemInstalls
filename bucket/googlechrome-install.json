@@ -19,7 +19,7 @@
     "installer": {
         "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/i', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
     },
-    "post_install": "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Google Chrome.lnk\" -Force",
+    "post_install": "if (Test-Path \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Google Chrome.lnk\") {Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Google Chrome.lnk\" -Force}",
     "uninstaller": {
         "script": "Invoke-ExternalCommand msiexec -ArgumentList @('/x', \"$dir\\setup.msi_\", '/qn') -RunAs | Out-Null"
     },
