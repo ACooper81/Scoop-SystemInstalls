@@ -31,12 +31,5 @@
                 "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force"
             ]
         }
-    },
-    "checkver": {
-        "url": "https://www.kcsoftwares.com/sumo/view.php?uid=333942906&ProductName=video%20downloader%20converter&Company=Allavsoft%20Corporation&prot=2",
-        "re": "<small>v([\\d.]+)"
-    },
-    "autoupdate": {
-        "url": "https://www.allavsoft.com/downloads/allavsoft.exe#/setup.exe"
     }
 }
