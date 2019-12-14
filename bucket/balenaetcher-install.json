@@ -11,11 +11,15 @@
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S') -RunAs | Out-Null"
             },
             "uninstaller": {
-                "script": "& \"$Env:UserProfile\\AppData\\Local\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
+                "script": [
+                    "$LocalApplicationData = [Environment]::GetFolderPath(\"LocalApplicationData\")",
+                    "& \"$LocalApplicationData\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
+                ]
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "if (Test-Path \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\") {Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force}"
+                "$DesktopPath = [Environment]::GetFolderPath(\"Desktop\")",
+                "if (Test-Path \"$DesktopPath\\balenaEtcher.lnk\") {Remove-Item \"$DesktopPath\\balenaEtcher.lnk\" -Force}"
             ]
         },
         "32bit": {
@@ -23,11 +27,15 @@
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/S') -RunAs | Out-Null"
             },
             "uninstaller": {
-                "script": "& \"$Env:UserProfile\\AppData\\Local\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
+                "script": [
+                    "$LocalApplicationData = [Environment]::GetFolderPath(\"LocalApplicationData\")",
+                    "& \"$LocalApplicationData\\Programs\\balena-etcher\\Uninstall balenaEtcher.exe\" /S"
+                ]
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "if (Test-Path \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\") {Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force}"
+                "$DesktopPath = [Environment]::GetFolderPath(\"Desktop\")",
+                "if (Test-Path \"$DesktopPath\\balenaEtcher.lnk\") {Remove-Item \"$DesktopPath\\balenaEtcher.lnk\" -Force}"
             ]
         }
     },
