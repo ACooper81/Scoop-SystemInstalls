@@ -16,7 +16,7 @@
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force"
+                "if (Test-Path \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\") {Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force}"
             ]
         },
         "32bit": {
@@ -28,7 +28,7 @@
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force"
+                "if (Test-Path \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\") {Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force}"
             ]
         }
     }
