@@ -12,11 +12,15 @@
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CLOSEAPPLICATIONS', '/SP-') -RunAs | Out-Null"
             },
             "uninstaller": {
-                "script": "& \"$Env:Programfiles (x86)\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                "script": [
+                    "$ProgramFilesX86Path = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
+                    "& \"$ProgramFilesX86Path\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                ]
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "if (Test-Path \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\") {Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force}"
+                "$CommonDesktopPath = [Environment]::GetFolderPath(\"CommonDesktopDirectory\")",
+                "if (Test-Path \"$CommonDesktopPath\\Allavsoft.lnk\") {Remove-Item \"$CommonDesktopPath\\Allavsoft.lnk\" -Force}"
             ]
         },
         "32bit": {
@@ -24,11 +28,15 @@
                 "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CLOSEAPPLICATIONS', '/SP-') -RunAs | Out-Null"
             },
             "uninstaller": {
-                "script": "& \"$Env:Programfiles\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                "script": [
+                    "$ProgramFilesPath = [Environment]::GetFolderPath(\"ProgramFiles\")",
+                    "& \"$ProgramFilesPath\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                ]
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "if (Test-Path \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\") {Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\Allavsoft.lnk\" -Force}"
+                "$CommonDesktopPath = [Environment]::GetFolderPath(\"CommonDesktopDirectory\")",
+                "if (Test-Path \"$CommonDesktopPath\\Allavsoft.lnk\") {Remove-Item \"$CommonDesktopPath\\Allavsoft.lnk\" -Force}"
             ]
         }
     }
