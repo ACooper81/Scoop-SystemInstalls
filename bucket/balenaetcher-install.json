@@ -15,7 +15,7 @@
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force"
+                "if (Test-Path \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\") {Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force}"
             ]
         },
         "32bit": {
@@ -27,7 +27,7 @@
             },
             "post_install": [
                 "Remove-Item \"$dir\\setup.exe\"",
-                "Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force"
+                "if (Test-Path \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\") {Remove-Item \"$env:USERPROFILE\\Desktop\\balenaEtcher.lnk\" -Force}"
             ]
         }
     },
