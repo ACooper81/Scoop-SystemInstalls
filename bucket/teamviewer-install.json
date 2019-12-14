@@ -1,11 +1,11 @@
 {
+    "version": "15.0.8397",
+    "description": "Software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
     "homepage": "https://www.teamviewer.com",
     "license": {
         "identifier": "Shareware",
         "url": "https://www.teamviewer.com/en/eula/"
     },
-    "description": "Software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
-    "version": "15.0.8397",
     "url": "https://dl.teamviewer.com/download/TeamViewer_Setup.exe#/setup.exe",
     "hash": "e08d5efa1f17b02ba20f9b4987ed744f7635d2103ade64101551767cf319baf4",
     "installer": {
@@ -15,13 +15,14 @@
     },
     "post_install": [
         "Remove-Item \"$dir\\setup.exe\"",
-        "if (Test-Path \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\TeamViewer.lnk\") {Remove-Item \"$env:HOMEDRIVE\\Users\\Public\\Desktop\\TeamViewer.lnk\" -Force}"
+        "$CommonDesktopPath = [Environment]::GetFolderPath(\"CommonDesktopDirectory\")",
+        "if (Test-Path \"$CommonDesktopPath\\TeamViewer.lnk\") {Remove-Item \"$CommonDesktopPath\\TeamViewer.lnk\" -Force}"
     ],
     "uninstaller": {
         "script": [
             "taskkill /F /IM teamviewer.exe /FI 'status eq running'",
-            "$pg_x86 = (Get-Item Env:programfiles`(x86`)).Value",
-            "Invoke-ExternalCommand \"$pg_x86\\TeamViewer\\uninstall.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null"
+            "$ProgramFilesX86Path = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
+            "Invoke-ExternalCommand \"$ProgramFilesX86Path\\TeamViewer\\uninstall.exe\" -ArgumentList @('/S', '/norestart') -RunAs | Out-Null"
         ]
     },
     "checkver": {
