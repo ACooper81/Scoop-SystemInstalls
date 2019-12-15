@@ -7,6 +7,10 @@
     "installer": {
         "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/sAll', '/rs', '/msi', '/qn', '/norestart', 'EULA_ACCEPT=YES') -RunAs | Out-Null"
     },
+    "post_install": [
+        "$CommonDesktopPath = [Environment]::GetFolderPath(\"CommonDesktopDirectory\")",
+        "if (Test-Path \"$CommonDesktopPath\\Acrobat Reader DC.lnk\") {Remove-Item \"$CommonDesktopPath\\Acrobat Reader DC.lnk\" -Force}"
+    ],
     "uninstaller": {
         "script": [
             "$id = wmic product where \"\"\"name like 'Adobe Acrobat Reader DC%'\"\"\" get IdentifyingNumber | find /i \"\"\"-\"\"\"",
