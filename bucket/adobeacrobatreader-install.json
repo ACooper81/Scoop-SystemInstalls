@@ -5,7 +5,7 @@
     "url": "http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/1902120058/AcroRdrDC1902120058_en_US.exe#/setup.exe",
     "hash": "6bd68fea89cd6994715fe769717cc269fee78429fc12430e1a93a1cf7bb64b81",
     "installer": {
-        "script": "& \"$dir\\setup.exe\" /sAll /rs /msi /qn /norestart EULA_ACCEPT=YES"
+        "script": "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/sAll', '/rs', '/msi', '/qn', '/norestart', 'EULA_ACCEPT=YES') -RunAs | Out-Null"
     },
     "uninstaller": {
         "script": [
