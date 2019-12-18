@@ -9,11 +9,11 @@
     "architecture": {
         "64bit": {
             "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi#/setup.msi_",
-            "hash": "e0ad1a767bff30b354f11b60cb0b08b56a2719e8758f2e11f44c459687bf5e50"
+            "hash": "1278724d8a2d044b19f821e40c3e417f5f764f9905319970814171705e029920"
         },
         "32bit": {
             "url": "https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi#/setup.msi_",
-            "hash": "0f95f2acbfe179e542fe912b8822d3bbcb572fa362fde4331878ae08aa8bea53"
+            "hash": "b0e86014b950e9f525abc3413e08404e51c38592e2d636c1545120409c361963"
         }
     },
     "installer": {
@@ -28,7 +28,7 @@
     },
     "checkver": {
         "url": "https://chrome-dl.com/api/chrome.xml",
-        "regex": "(?sm)<stable32><version>(?<version>[\\d.]+)</version>.+release2/chrome/(?<32>[\\w-]+)_.+<stable64>.+release2/chrome/(?<64>[\\w-]+)_.+</stable64>"
+        "regex": "(?<version>[\\d.]+)</version>"
     },
     "autoupdate": {
         "architecture": {
