@@ -41,5 +41,12 @@
                 "if (Test-Path \"$CommonDesktopPath\\Allavsoft.lnk\") {Remove-Item \"$CommonDesktopPath\\Allavsoft.lnk\" -Force}"
             ]
         }
+    },
+    "checkver": {
+        "url": "http://kcsoftwares.com/sumo/view.php?prot=2&ProductName=video+downloader+converter&Company=Allavsoft%20Corporation",
+        "re": ">\\s*v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://www.allavsoft.com/downloads/allavsoft.exe#/setup.exe"
     }
 }
