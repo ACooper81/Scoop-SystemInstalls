@@ -7,12 +7,12 @@
         "64bit": {
             "url": "https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/1.5.3/MPC-BE.1.5.3.x64-installer.zip#/setup.zip",
             "hash": "sha1:dffc664914192c2086afc67e7d4a0808926c4d3e",
-            "extract_dir": "MPC-BE.1.5.3.4488.x64"
+            "extract_dir": ""
         },
         "32bit": {
             "url": "https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/1.5.3/MPC-BE.1.5.3.x86-installer.zip#/setup.zip",
             "hash": "sha1:4452552676219e70c687958ac47ae6e64ed20179",
-            "extract_dir": "MPC-BE.1.5.3.4488.x86"
+            "extract_dir": ""
         }
     },
     "installer": {
