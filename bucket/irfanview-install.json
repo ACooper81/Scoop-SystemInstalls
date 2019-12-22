@@ -30,7 +30,7 @@
     },
     "installer": {
         "script": [
-            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/silent', '/desktop=0', '/thumbs=0', '/group=1', '/allusers=1', '/assoc=1', '/assocallusers') -RunAs | Out-Null",
+            "Invoke-ExternalCommand \"$dir\\setup.exe\" -ArgumentList @('/silent', '/desktop=0', '/thumbs=0', '/group=1', '/allusers=1', '/assoc=0') -RunAs | Out-Null",
             "Invoke-ExternalCommand \"$dir\\pluginsetup.exe\" -ArgumentList @('/silent') -RunAs | Out-Null"
         ]
     },
