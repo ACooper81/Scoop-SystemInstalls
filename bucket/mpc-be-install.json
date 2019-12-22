@@ -6,15 +6,18 @@
     "architecture": {
         "64bit": {
             "url": "https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/1.5.3/MPC-BE.1.5.3.x64-installer.zip#/setup.zip",
-            "hash": "sha1:dffc664914192c2086afc67e7d4a0808926c4d3e"
+            "hash": "sha1:dffc664914192c2086afc67e7d4a0808926c4d3e",
+            "installer": {
+                "script": "Invoke-ExternalCommand \"$dir\\MPC-BE.$version.$matchBuild.x64.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-') -RunAs | Out-Null"
+            }
         },
         "32bit": {
             "url": "https://sourceforge.net/projects/mpcbe/files/MPC-BE/Release%20builds/1.5.3/MPC-BE.1.5.3.x86-installer.zip#/setup.zip",
-            "hash": "sha1:4452552676219e70c687958ac47ae6e64ed20179"
+            "hash": "sha1:4452552676219e70c687958ac47ae6e64ed20179",
+            "installer": {
+                "script": "Invoke-ExternalCommand \"$dir\\MPC-BE.$version.$matchBuild.x86.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-') -RunAs | Out-Null"
+            }
         }
-    },
-    "installer": {
-        "script": "Invoke-ExternalCommand \"$dir\\*.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-') -RunAs | Out-Null"
     },
     "checkver": {
         "url": "https://sourceforge.net/p/mpcbe/code/HEAD/tree/",
