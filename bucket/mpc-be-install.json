@@ -9,6 +9,16 @@
             "hash": "sha1:dffc664914192c2086afc67e7d4a0808926c4d3e",
             "installer": {
                 "script": "Invoke-ExternalCommand \"$dir\\MPC-BE.1.5.3.4488.x64.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-') -RunAs | Out-Null"
+            },
+            "post_install": [
+                "$DesktopPath = [Environment]::GetFolderPath(\"DesktopDirectory\")",
+                "if (Test-Path \"$DesktopPath\\MPC-BE x64.lnk\") {Remove-Item \"$DesktopPath\\MPC-BE x64.lnk\" -Force}"
+            ],
+            "uninstaller": {
+                "script": [
+                    "$ProgramFilesPath = [Environment]::GetFolderPath(\"ProgramFiles\")",
+                    "& \"$ProgramFilesPath\\MPC-BE x64\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                ]
             }
         },
         "32bit": {
@@ -16,6 +26,16 @@
             "hash": "sha1:4452552676219e70c687958ac47ae6e64ed20179",
             "installer": {
                 "script": "Invoke-ExternalCommand \"$dir\\MPC-BE.1.5.3.4488.x86.exe\" -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/SP-') -RunAs | Out-Null"
+            },
+            "post_install": [
+                "$DesktopPath = [Environment]::GetFolderPath(\"DesktopDirectory\")",
+                "if (Test-Path \"$DesktopPath\\MPC-BE x86.lnk\") {Remove-Item \"$DesktopPath\\MPC-BE x86.lnk\" -Force}"
+            ],
+            "uninstaller": {
+                "script": [
+                    "$ProgramFilesPath = [Environment]::GetFolderPath(\"ProgramFiles\")",
+                    "& \"$ProgramFilesPath\\MPC-BE x64\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                ]
             }
         }
     },
