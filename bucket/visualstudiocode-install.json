@@ -9,12 +9,12 @@
     "notes": "Add Visual Studio Code as a context menu option by running: \"$dir\\vscode-install-context.reg\"",
     "architecture": {
         "64bit": {
-            "url": "https://code.visualstudio.com/docs/?dv=win64#/setup.exe",
-            "hash": "4b43ca4c33ac8bd16291ff3eff8a5267ee1d78d18cc9b6480aef300993c36891"
+            "url": "https://update.code.visualstudio.com/1.41.1/win32-x64/stable#/setup.exe",
+            "hash": "cfde2bc9e601d3d1ab4a1f43c4a5d8c352b41a82cc97732a0c07ccaed3d2c086"
         },
         "32bit": {
-            "url": "https://code.visualstudio.com/docs/?dv=win32#/setup.exe",
-            "hash": "4b43ca4c33ac8bd16291ff3eff8a5267ee1d78d18cc9b6480aef300993c36891"
+            "url": "https://update.code.visualstudio.com/1.41.1/win32/stable#/setup.exe",
+            "hash": "d72dfa1e4644e0bbe7ebe7243a2ac59f51b2d2ca261bb24936f2879ad1d6aac3"
         }
     },
     "installer": {
@@ -33,10 +33,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://code.visualstudio.com/docs/?dv=win64#/setup.exe"
+                "url": "https://update.code.visualstudio.com/$version/win32-x64/stable#/setup.exe"
             },
             "32bit": {
-                "url": "https://code.visualstudio.com/docs/?dv=win32#/setup.exe"
+                "url": "https://update.code.visualstudio.com/$version/win32/stable#/setup.exe"
             }
         }
     }
