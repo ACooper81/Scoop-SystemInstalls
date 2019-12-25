@@ -6,7 +6,6 @@
         "identifier": "Freeware",
         "url": "https://code.visualstudio.com/License/"
     },
-    "notes": "Add Visual Studio Code as a context menu option by running: \"$dir\\vscode-install-context.reg\"",
     "architecture": {
         "64bit": {
             "url": "https://update.code.visualstudio.com/1.41.1/win32-x64/stable#/setup.exe",
