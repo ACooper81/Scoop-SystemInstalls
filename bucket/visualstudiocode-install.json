@@ -22,8 +22,8 @@
     },
     "uninstaller": {
         "script": [
-            "$ProgramFilesX86Path = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
-            "& \"$ProgramFilesX86Path\\Microsoft VS Code\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+            "$ProgramFilesPath = [Environment]::GetFolderPath(\"ProgramFiles\")",
+            "& \"$ProgramFilesPath\\Microsoft VS Code\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
         ]
     },
     "checkver": {
