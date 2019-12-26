@@ -1,5 +1,5 @@
 {
-    "version": "3.22.0.7297",
+    "version": "3.22.0.7298",
     "description": "Download free videos from 100+ sites and convert to popular video and audio format.",
     "homepage": "https://www.allavsoft.com/index.html",
     "license": {
@@ -7,7 +7,7 @@
     },
     "notes": "",
     "url": "https://www.allavsoft.com/downloads/allavsoft.exe#/setup.exe",
-    "hash": "fb8000db82be9f972d2994eacd5bf32f1ca309c039839b10579869f195a47c9b",
+    "hash": "d8a43d37bfd5feb84cda7491473f5013fdc2145a008e9c5d739983c252affa3d",
     "architecture": {
         "64bit": {
             "installer": {
