@@ -16,7 +16,7 @@
             "uninstaller": {
                 "script": [
                     "$ProgramFilesX86Path = [Environment]::GetFolderPath(\"ProgramFilesX86\")",
-                    "& \"$ProgramFilesX86Path\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                    "& \"$ProgramFilesX86Path\\Allavsoft\\Video Downloader Converter\\unins001.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
                 ]
             },
             "post_install": [
@@ -32,7 +32,7 @@
             "uninstaller": {
                 "script": [
                     "$ProgramFilesPath = [Environment]::GetFolderPath(\"ProgramFiles\")",
-                    "& \"$ProgramFilesPath\\Allavsoft\\Video Downloader Converter\\unins000.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
+                    "& \"$ProgramFilesPath\\Allavsoft\\Video Downloader Converter\\unins001.exe\" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
                 ]
             },
             "post_install": [
